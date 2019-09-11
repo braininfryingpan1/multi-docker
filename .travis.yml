@@ -19,7 +19,6 @@ after_success:
   - docker push braininfryingpan/multi-container-nginx
   - docker push braininfryingpan/multi-container-server
   - docker push braininfryingpan/multi-container-worker
-
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
