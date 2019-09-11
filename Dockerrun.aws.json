@@ -1,0 +1,40 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "braininfryingpan/multi-container-client",
+            "hostname": "client",
+            "essestial": false
+
+        },
+        {
+            "name": "server",
+            "image": "braininfryingpan/multi-container-server",
+            "hostname": "api",
+            "essestial": false
+            
+        },
+        {
+            "name": "worker",
+            "image": "braininfryingpan/multi-container-worker",
+            "hostname": "worker",
+            "essestial": false
+            
+        },
+        {
+            "name": "nginx",
+            "image": "braininfryingpan/multi-container-nginx",
+            "hostname": "nginx",
+            "essestial": true,
+            "portMappings":[
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client","server"]
+            
+        }
+    ]
+}
