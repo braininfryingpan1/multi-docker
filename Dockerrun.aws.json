@@ -29,8 +29,8 @@
             "name": "nginx",
             "image": "braininfryingpan/multi-container-nginx",
             "hostname": "nginx",
-            "essestial": true,
-            "portMappings":[
+            "essestial": false,
+            "portMappings": [
                 {
                     "hostPort": 80,
                     "containerPort": 80
