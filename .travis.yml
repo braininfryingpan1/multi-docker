@@ -15,7 +15,7 @@ after_success:
   - docker build -t braininfryingpan/multi-container-worker ./worker
 
   #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker login --username "$DOCKER_ID"  --password "$DOCKER_PASSWORD"
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID"  --password-stdin
   - docker push braininfryingpan/multi-container-client
   - docker push braininfryingpan/multi-container-nginx
   - docker push braininfryingpan/multi-container-server
