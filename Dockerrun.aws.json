@@ -5,7 +5,7 @@
             "name": "client",
             "image": "braininfryingpan/multi-container-client",
             "hostname": "client",
-            "essestial": false,
+            "essential": false,
             "memory": 128
 
         },
@@ -13,7 +13,7 @@
             "name": "server",
             "image": "braininfryingpan/multi-container-server",
             "hostname": "api",
-            "essestial": false,
+            "essential": false,
             "memory": 128
             
         },
@@ -21,7 +21,7 @@
             "name": "worker",
             "image": "braininfryingpan/multi-container-worker",
             "hostname": "worker",
-            "essestial": false,
+            "essential": false,
             "memory": 128
             
         },
@@ -29,14 +29,14 @@
             "name": "nginx",
             "image": "braininfryingpan/multi-container-nginx",
             "hostname": "nginx",
-            "essestial": false,
+            "essential": true,
             "portMappings": [
                 {
                     "hostPort": 80,
                     "containerPort": 80
                 }
             ],
-            "links": ["client","server"],
+            "links": ["client", "server"],
             "memory": 128
             
         }
